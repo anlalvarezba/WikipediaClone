@@ -18,6 +18,9 @@ header {
 header div {
     width: 200px;
 }
+header .header-globe-img {
+    display: none;
+}
 header img {
     width: 100%;
 }
@@ -30,7 +33,7 @@ header span {
 }
 main {
     width: 100%;
-    height: 600px;
+    height: 1000px;
     position: absolute;
     top: 120px;
     z-index: +1;
@@ -208,11 +211,8 @@ button {
 	outline: inherit;
 }
 main .main-section2 {
-    /* width: 100%; */
     height: 480px;
-    /* height: auto; */
     border-top: 1px solid #C8C8C8;
-    border-bottom: 1px solid #C8C8C8;
     margin: 0 15px;
     padding: 40px 0 40px 20px;
     display: grid;
@@ -229,14 +229,10 @@ main .main-section2__containers1y3 {
     justify-content: baseline;
 }
 main .main-section2__container1 {
-    /* grid-row: 1 / 2;
-    grid-column: 1 / 2; */
     display: inline-flex;
     margin-bottom: 20px;
 } 
 main .main-section2__container3 {
-    /* grid-row: 2 / 5;
-    grid-column: 1 / 2; */
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
@@ -278,8 +274,6 @@ main .main-section2__container2 {
     grid-template-columns: 1fr 1fr 1fr;
 }
 main .main-section2__container2 .wiki-tool {
-    /* width: auto;
-    height: fit-content; */
     height: auto;
     display: inline-flex;
     align-items: flex-start;
@@ -410,6 +404,9 @@ main .main-section2__container3 .container3-img {
     background-position: 10px -716px;
     align-self: baseline;
 }
+main .main-section2__container3 .container3-img2 {
+    display: none;
+}
 main .main-section2__container3 a {
     font-size: 1.4rem;
     color: #4072d0;
@@ -446,46 +443,246 @@ main .main-section2__container3 .app-store {
     height: fit-content;
     display: inline-flex;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 footer {
-    width: 100%;
-    height: 100px;
-    background-color: grey;
+    width: calc(100% - 30px);
+    height: fit-content;
+    min-height: 50px;
+    border-top: 1px solid #C8C8C8;
+    position: absolute;
+    top: 1120px;
+    margin: 0 15px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+footer > p {
+    font-size: 1.2rem;
+    color: #54595d;
+    white-space: normal; 
+    overflow-wrap: break-word;
+    margin: 0 5px;
+    text-align: center;
+}
+footer a {
+    color: #4072d0;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer .footer-link2::before, footer .footer-link3::before {
+    content:"\A";
+    width: 5px;
+    height: 5px;
+    border-radius:50%;
+    background: #808080;
+    display:inline-block;
     position: relative;
-    bottom: -1200px;
+    bottom: 2px;
+    margin: 0 5px;
+} 
+
+@media (max-width: 768px) {
+    main {
+        height: 1260px;
+        width: auto;
+    }
+    main .main-section2 {
+        height: 750px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 80px 80px 80px 80px 140px;
+    }
+    main .main-section2__containers1y3 {
+        grid-row: 1 / 7;
+        grid-column: 1 / 2;
+        justify-content: space-between;
+
+    }
+    main .main-section2__container1 {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        flex-direction: column;
+        align-items: center;
+        /* display: inline-flex;
+        margin-bottom: 20px; */
+    } 
+    main .main-section2__container3 {
+        grid-row: 6 / 7;
+        grid-column: 1 / 2;
+        flex-direction: column;
+        align-items: center;
+        /* display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center; */
+    }
+    main .main-section2__container2 {
+        grid-row: 2 / 6;
+        grid-column: 1 / 2;
+    }
+    main .main-section2__container1 > div, main .main-section2__container3 > div {
+        width: 100%;
+        max-width: none;
+        text-align: center;
+        /* height: auto;
+        margin-top: auto; */
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    main .main-section2__container3 p {
+        width: 100%;
+    }
+    main .main-section2__container3 .container3-img {
+        display: none;
+    }
+    .container3-div1 {
+        display: inline-flex;
+    }
+    main .main-section2__container3 .container3-img2 {
+        display: inline;
+        width: 65px;
+        height: 45px;
+        background-image: url('https://www.wikipedia.org/portal/wikipedia.org/assets/img/sprite-e99844f6.svg');
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: 10px -716px;
+        /* align-self: center;  */
+        margin: 0 0 0 auto;
+    }
+    .dowload-link {
+        margin: 0 auto 0 0;
+    }
+    .container3-div2 {
+        justify-content: center;
+        width: 100%;
+    }
+    footer {
+        top: 1320px;
+    }
+}
+@media (max-width: 550px) {
+    main .main-section1 img {
+        /* width: 200px;
+        position: absolute; */
+        left: calc(50% - 90px);
+        /* top: 70px; */
+    }
+}
+@media (max-width: 510px) {
+    main .main-section1 img {
+        /* width: 200px;
+        position: absolute; */
+        left: calc(50% - 80px);
+        /* top: 70px; */
+    }
+    header {
+        width: 500px;
+    }
+    main {
+        height: 1300px;
+    }
+    main .main-section2 {
+        height: 750px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 80px 80px 80px 80px 180px;
+    }
+    footer {
+        top: 1360px;
+        width: 100%;
+    }
+}
+@media (max-width: 490px) {
+    main .main-section1 img {
+        /* width: 200px;
+        position: absolute; */
+        left: calc(50% - 60px);
+        /* top: 70px; */
+    }
+}
+@media (max-width: 480px) {
+
+    header .header-globe-img {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-self: center;
+    }
+    .main-globe {
+        /* width: 200px;
+        position: absolute;
+        left: calc(50% - 100px);
+        top: 70px; */
+        display: none;
+    }
+    main .main-section1 {
+        position: relative;
+        top: 150px;
+    }
+    main .main-section1 .main-logo-divs {
+        /* height: 50px; 
+        display: flex;
+        justify-content: space-between;
+        line-height: 2.3rem;
+        text-align: center;*/
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: 0 auto; 
+        width: 460px;
+    }
+    main .search-container__bar {
+        width: 76%;
+        height: 80px; /*
+        border: 1px solid #C8C8C8;
+        border-radius: 2px;
+        display: flex;
+        align-items: center; */
+        position: absolute;
+        top: -120px;
+        left: 65px;
+        z-index: +2;
+    }
+    main .search-container__bar span {
+        background-image: url('https://www.wikipedia.org/portal/wikipedia.org/assets/img/sprite-e99844f6.svg');
+        background-color: #3769cd;
+        background-repeat: no-repeat;
+        background-position: 18px -935px; 
+        background-size: 400%;
+        border-top: 25px solid #3769cd;
+        border-bottom: 25px solid #3769cd;
+        border-radius: 0 2px 2px 0;
+        width: 60px;
+        height: inherit; /* 22px */
+        cursor: pointer;
+    }
+    main .main-section2 {
+        height: 750px;
+        border-top: none;
+        margin-top: 20px;
+        grid-template-rows: 120px 80px 80px 80px 80px 240px;
+    }
+/* 
+    header {
+        width: 500px;
+    }
+    main {
+        height: 1300px;
+    }
+    main .main-section2 {
+        height: 750px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 80px 80px 80px 80px 180px;
+    } */
+    footer {
+        top: 1461px;
+        width: 500px;
+    } 
+    main .main-section2__container2 {
+        /* height: auto;
+        grid-row: 1 / 5;
+        grid-column: 2 / 3;
+        display: grid; */
+        grid-template-columns: 1fr 1fr;
+    }
 }
